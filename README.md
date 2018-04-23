@@ -1,7 +1,7 @@
 # Nutriproject
-2nd project Ironhack Bootcamp Madrid
-Marvel presentation: https://marvelapp.com/15h3gc0g/screen/41586000
-Trello: https://trello.com/b/CHRriyTS/proyecto-2-ironhack
+2nd project for Ironhack Web Development Bootcamp in Madrid
+- [Marvel presentation](https://marvelapp.com/15h3gc0g/screen/41586000)
+- [Trello](https://trello.com/b/CHRriyTS/proyecto-2-ironhack)
 
 Authors: 
   * Risto Tapani 
