@@ -1,5 +1,6 @@
 
 @import 'colors';
+@import 'fonts';
 
 body {
   padding: 50px;
@@ -18,4 +19,7 @@ button{
   color: white;
   border: none;
   background-color: $light-green;
+}
+form {
+  width: 40%;
 }

@@ -1,3 +1,11 @@
+h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 2; }
+
+.form-check-label {
+  line-height: 1.5; }
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
@@ -13,5 +21,8 @@ button {
   color: white;
   border: none;
   background-color: #13CE66; }
+
+form {
+  width: 40%; }
 
 /*# sourceMappingURL=style.css.map */
