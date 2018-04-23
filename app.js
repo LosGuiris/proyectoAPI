@@ -11,8 +11,7 @@ const path         = require('path');
 
 const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
-const flash      = require("connect-flash");
-    
+const flash      = require("connect-flash");    
 
 mongoose.Promise = Promise;
 mongoose
@@ -81,5 +80,7 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
       
+const search = require('./routes/search');
+app.use('/search', search)
 
 module.exports = app;

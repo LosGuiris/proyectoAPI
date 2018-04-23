@@ -1,17 +1,15 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
-const userSchema = new Schema({
-  username: String,
-  password: String,
-
-
-}, {
+const recipeSchema = new Schema({
+  name: String,
+  
+ {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   }
 });
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+const Recipe = mongoose.model('Recipe', recipeSchema);
+module.exports = Recipe;
