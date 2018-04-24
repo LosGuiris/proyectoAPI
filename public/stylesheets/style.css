@@ -22,10 +22,36 @@ button {
   border: none;
   background-color: #13CE66; }
 
-<<<<<<< HEAD
-=======
-form {
-  width: 30%; }
+nav {
+  background-color: #0c5a2f;
+  height: 80px; }
+  nav a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-out; }
+    nav a:link, nav a:visited {
+      color: white; }
+    nav a:hover {
+      color: #13CE66 !important; }
+  nav .login {
+    padding: 20px;
+    text-decoration: none;
+    background: #13CE66;
+    font-weight: 700; }
+    nav .login:hover {
+      background: #339933; }
 
->>>>>>> 85a275b475a829311efc6836f1ab905c1d6719fe
+.main {
+  margin-top: 40px; }
+
+footer {
+  height: 80px;
+  background-color: #515352; }
+
+.navbar-brand > img {
+  height: 60px; }
+
+.recipe a {
+  overflow: auto; }
+
 /*# sourceMappingURL=style.css.map */

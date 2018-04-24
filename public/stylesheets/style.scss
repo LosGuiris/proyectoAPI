@@ -19,10 +19,42 @@ button{
   color: white;
   border: none;
   background-color: $light-green;
-<<<<<<< HEAD
-=======
 }
-form {
-  width: 30%;
->>>>>>> 85a275b475a829311efc6836f1ab905c1d6719fe
+nav{
+  background-color: $dark-green;
+  height:80px;
+  a{
+    color:white;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    &:link,&:visited{
+      color:white;
+    }
+    &:hover{
+      color:$light-green !important;
+    }
+  }
+  .login{
+    padding:20px;
+    text-decoration: none;
+    background: $light-green;
+    font-weight: 700;
+    &:hover{
+      background: $mid-green;
+    }
+
+  }
+}
+.main {
+  margin-top: 40px;
+}
+footer{
+  height: 80px;
+  background-color: $dark-grey;
+}
+.navbar-brand > img{
+  height: 60px;
+}
+.recipe a{
+  overflow:auto;
 }

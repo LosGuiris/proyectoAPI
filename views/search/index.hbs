@@ -76,7 +76,7 @@
 <div class="container-fluid d-flex flex-row justify-content-center flex-wrap">
   {{#each recs}}
   <div class="recipe mr-3">
-    <img src="{{this.recipe.image}}" alt="{{this.recipe.label}}">
+    <a href="/recipe/:{{this.recipe.uri}}"></a><img src="{{this.recipe.image}}" alt="{{this.recipe.label}}">
     <h2>{{dotdotdot this.recipe.label}}</h2>
     <p>{{round this.recipe.calories}}</p>
     {{#each this.recipe.dietLabels}}
