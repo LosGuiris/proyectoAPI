@@ -32,6 +32,29 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(
+  session({
+    secret: "maluca",
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 60 * 60 * 24 * 2 }, //2 days
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 * 2 // 2 day
+    })
+  })
+);
+app.use((req, res, next) => {
+  if (req.session.currentUser) {
+    res.locals.currentUserInfo = req.session.currentUser;
+   
+    res.locals.isUserLoggedIn = true;
+  } else {
+    res.locals.isUserLoggedIn = false;
+  }
+
+  next();
+});
 
 // Express View engine setup
 
@@ -84,6 +107,8 @@ const userRoutes = require('./routes/user');
 app.use('/user', userRoutes);
       
 const search = require('./routes/search');
-app.use('/search', search)
+app.use('/search', search);
+
+
 
 module.exports = app;

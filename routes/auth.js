@@ -13,7 +13,7 @@ authRoutes.get("/login", (req, res, next) => {
 });
 
 authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/user/user",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
@@ -47,12 +47,12 @@ authRoutes.post("/signup", (req, res, next) => {
       role:"teacher"
     });
 
-    newUser.save((err) => {
+    newUser.save((err, us) => {
       if (err) {
         res.render("auth/signup", { message: "Something went wrong" });
       } else {
         req.session.currentUser = newUser;
-        res.redirect("/user");
+        res.redirect(`/user/user_profile/${newUser._id}`);
       }
     });
   });

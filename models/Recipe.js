@@ -3,8 +3,9 @@ const Schema   = mongoose.Schema;
 
 const recipeSchema = new Schema({
   name: String,
+  calories: String
   
- {
+}, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'

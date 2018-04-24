@@ -4,8 +4,10 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-
-
+  gender: {type:String,default:'Null'},
+  allergies: {type:String,default:'Null'},
+  diet: {type:String,default:'Null'},
+  age: Number,
 }, {
   timestamps: {
     createdAt: 'created_at',

@@ -4,15 +4,24 @@
 <h1>{{this.username}}</h1>
 {{/with}}
 
-
+<form action="/user/user_profile" method='post'>
+<input type="hidden" value={{user._id}} name="id">
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Gender</label>
+  </div>
 <select name="gender" method="post">
+  <option selected>Choose...</option>
   <option value="Male">Male</option>
   <option value="Female">Female</option>
 </select>
-
-<br></br>
-
-<select name="allergies" method="post">
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Allergies</label>
+  </div>
+<select class="custom-select" id="inputGroupSelect01" name="allergies" method="post">
+  <option selected>Choose...</option>
   <option value="Peanut-free">Peanut-free</option>
   <option value="Tree-nut-free">Tree-nut-free</option>
   <option value="sugar-conscious">sugar-conscious</option>
@@ -20,25 +29,37 @@
   <option value="vegan">vegan</option>
   <option value="vegetarian">vegeterian</option>
 </select>
-
-<br></br>
-
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Diet</label>
+  </div>
 <select name="diet" method="post">
+  <option selected>Choose...</option>
   <option value="balanced">Balanced</option>
   <option value="high-Protein">High Protein</option>
   <option value="low-fat">low fat</option>
   <option value="low-carb">low carb</option>
   <option value="low-sodium">low sodium</option>
-  
-</select>
+  </select>
+</div>
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Age</label>
+  </div>
+<input type= "number" name="age" method="post"></input>
+</div>
+<button>
+  SUBMIT
+</button>
+</form>
 
 <br></br>
+  <a class ="btn btn-primary" href="/auth/logout">Log out</a>
+  <br></br>
+  <a class="btn btn-primary" href="/search">choose recipes</a>
 
-<p>
-  Go to Profile
-  <a href="/user/user">
-    Profile
-  </a>
-</p>
+
 
 
