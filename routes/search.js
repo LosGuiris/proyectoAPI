@@ -3,9 +3,8 @@ const router = express.Router();
 const axios = require("axios");
 const app_id = process.env.APP_ID;
 const app_key = process.env.APP_KEY;
-const api = [
-  `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`
-];
+// Query URL where we will add all variable parameters
+let api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
 
 /* GET search page */
 router.get("/", (req, res, next) => {
@@ -15,89 +14,71 @@ router.get("/", (req, res, next) => {
 /* POST query */
 router.post("/", (req, res, next) => {
   console.log(req.body);
-
-  let name = req.body.name;
-  name != "" ? api.push(`&q=${name}`) : null;
-
-  let diet = req.body.diet;
-  if (diet.length != 0) {
-    for (let i = 0; i < diet.length; i++) {
-      if (diet[i] != "") {
-        api.push(`&diet=${diet[i]}`);
-      }
+  // Adding q parameter
+  if (req.body.name != undefined) {
+    let name = req.body.name;
+    if (name != "") {
+      api += `&q=${name}`;
     }
   }
-  let health = req.body.health;
-  if (health.length != 0) {
-    for (let i = 0; i < health.length; i++) {
-      if (health[i] != "") {
-        api.push(`&health=${health[i]}`);
-      }
-    }
-  }
+  //  Adding all diet parameters
+  api += multiParams("diet", req.body.diet);
+  //  Adding all health parameters
+  api += multiParams("health", req.body.health);
+  //  Adding calories MIN/MAX parameters
+  api += minmaxParams("&calories=", req.body.cal_min, req.body.cal_max);
+  // Adding preparation time MIN/MAX parameters
+  api += minmaxParams("&time=", req.body.t_min, req.body.t_max);
 
-  let cal = "&calories=";
-  let cal_min = req.body.cal_min;
-  let cal_max = req.body.cal_max;
-  //  IF both are empty
-  if (cal_min.length === 0 && cal_max.length === 0) {
-    cal = "";
-  }
-  //  IF both are not empty
-  if (cal_min.length != 0 && cal_max.length != 0) {
-    cal += `${cal_min}-${cal_max}`;
-  }
-  //  IF MIN is not empty
-  if (cal_min.length != 0 && cal_max.length === 0) {
-    cal += `${cal_min}+`;
-  }
-  //  IF MAX is not empty
-  if (cal_min.length === 0 && cal_max.length != 0) {
-    cal += `${cal_max}`;
-  }
-  //  We push the result to URL
-  api.push(cal);
-
-  let t = "&time=";
-  let t_min = req.body.t_min;
-  let t_max = req.body.t_max;
-  // IF both are empty
-  if (t_min.length === 0 && t_max.length === 0) {
-    t = "";
-  }
-  // IF both are not empty
-  if (t_min.length != 0 && t_max.length != 0) {
-    t += `${t_min}-${t_max}`;
-  }
-  // IF MIN is not empty
-  if (t_min.lenth != 0 && t_max.length === 0) {
-    t += `${t_min}+`;
-  }
-  // IF MAX is not empty
-  if (t_min.length === 0 && t_max.lenth != 0) {
-    t += `${t_max}`;
-  }
-  // We push the result to URL
-  api.push(t);
-
-  
-  console.log(api.join(""))
+  console.log(`Request URL: ${api}`);
+  res.redirect("/search/:results");
 });
 
 /* GET search result */
-router.get("/search:results", (req, res, next) => {
+router.get("/:results", (req, res, next) => {
   axios
     .get(api)
     .then(recipe => {
-      const name = recipe.data.hits[0].recipe.label;
-      const diet = recipe.data.hits[0].recipe.dietLabels;
-      const health = recipe.data.hits[0].recipe.healthLabels;
-
-      res.render("index", { name, diet, health });
-      console.log(recipe.data.hits[0].recipe.label);
+      // Pushing all results
+      let recs = recipe.data.hits;
+      res.render("search/index", { recs });
     })
-    .catch(e => console.log(e));
-  //res.render('index');
+    .catch(error => console.log(error));
 });
+//  Refactored function for both multiple choice parameters
+const multiParams = (p_name, p) => {
+  if (p === undefined) {
+    return (p = "");
+  } else {
+    if (typeof p === "string") {
+      return `&${p_name}=${p}`;
+    } else if (typeof p === "object") {
+      let acc = ""
+      for (let i = 0; i < p.length; i++) {
+        acc += `&${p_name}=${p[i]}`;
+      }
+      return acc;
+    }
+  }
+};
+//  Refactored function for both parameters IF chains
+const minmaxParams = (par, min, max) => {
+  //  IF both are empty
+  if (!min && !max) {
+    return (par = "");
+  }
+  //  IF both are not empty
+  if (min != "" && max != "") {
+    return (par += `${min}-${max}`);
+  }
+  //  IF MIN is not empty
+  if (!min && max === "") {
+    return (par += `${min}+`);
+  }
+  //  IF MAX is not empty
+  if (min === "" && !max) {
+    return (par += `${max}`);
+  }
+};
 
 module.exports = router;

@@ -1,70 +1,87 @@
-<form action="/search" method="post">
-  <div class="form-group">
-    <h3>Recipe name</h3>
-    <input class="form-control" type="text" name="name">
-    <div class="form-group">
-      <h3>Diets</h3>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="diet" value="balanced" id="balanced" />
-        <label class="form-check-label" for="balanced">Balanced</label>
-      </div>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="diet" value="low-carb" id="low-carb">
-        <label class="form-check-label" for="low-carb">Low carbs</label>
-      </div>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="diet" value="low-fat" />
-        <label class="form-check-label" for="balanced">Low fat</label>
-      </div>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="diet" value="high-protein" />
-        <label class="form-check-label" for="balanced">High protein</label>
-      </div>
+<form class="container-fluid d-flex flex-row" action="/search" method="post">
+  <div class="d-flex flex-column">
+    <div class="form-group container-fluid d-flex flex-row">
+      <h3>Recipe name</h3>
+      <input class="form-control" type="text" name="name">
     </div>
+    <div class="container-fluid d-flex flex-row">
+      <div class="form-group container-fluid d-inline-flex flex-column">
+        <label for="time">
+          <h3>Preparation time</h3>
+        </label>
+        <input class="form-control" type="number" id="amount" name="t_min" placeholder="min">
+        <input class="form-control" type="number" name="t_max" placeholder="max">
+        <div id="slider-range"></div>
+      </div>
 
-    <div class="form-group">
-      <h3>Health considerations</h3>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="health" value="tree-nut-free" />
-        <label class="form-check-label" for="balanced">Tree Nut Free</label>
+      <div class="form-group container-fluid d-inline-flex flex-column">
+        <h3>Health considerations</h3>
+        <div class="d-flex flex-row">
+          <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" name="health" value="tree-nut-free" />
+            <label class="form-check-label" for="balanced">Tree Nut Free</label>
+          </div>
+          <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" name="health" value="peanut-free" />
+            <label class="form-check-label" for="balanced">Peanut Free</label>
+          </div>
+          <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" name="health" value="alcohol-free" />
+            <label class="form-check-label" for="balanced">Alcohol Free</label>
+          </div>
+          <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" name="health" value="sugar-conscious" id="sugar-conscious" />
+            <label class="form-check-label" for="sugar-conscious">Sugar conscious</label>
+          </div>
+          <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" name="health" value="vegetarian" />
+            <label class="form-check-label" for="balanced">Vegetarian</label>
+          </div>
+          <div class="form-check-inline">
+            <input class="form-check-input" type="checkbox" name="health" value="vegan" />
+            <label class="form-check-label" for="balanced">Vegan</label>
+          </div>
+        </div>
       </div>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="health" value="peanut-free" />
-        <label class="form-check-label" for="balanced">Peanut Free</label>
+      <div class="form-group">
+        <h3>Diets</h3>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="checkbox" name="diet" value="balanced" id="balanced" />
+          <label class="form-check-label" for="balanced">Balanced</label>
+        </div>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="checkbox" name="diet" value="low-carb" id="low-carb">
+          <label class="form-check-label" for="low-carb">Low carbs</label>
+        </div>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="checkbox" name="diet" value="low-fat" />
+          <label class="form-check-label" for="balanced">Low fat</label>
+        </div>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="checkbox" name="diet" value="high-protein" />
+          <label class="form-check-label" for="balanced">High protein</label>
+        </div>
       </div>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="health" value="alcohol-free" />
-        <label class="form-check-label" for="balanced">Alcohol Free</label>
+      <div class="form-group container-fluid d-inline-flex flex-column">
+        <label for="callories">
+          <h3>Callories</h3>
+        </label>
+        <input class="form-control" type="number" name="cal_min" placeholder="min">
+        <input class="form-control" type="number" name="cal_max" placeholder="max">
       </div>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="health" value="sugar-conscious" id="sugar-conscious" />
-        <label class="form-check-label" for="sugar-conscious">Sugar conscious</label>
-      </div>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="health" value="vegetarian" />
-        <label class="form-check-label" for="balanced">Vegetarian</label>
-      </div>
-      <div class="form-check-inline">
-        <input class="form-check-input" type="checkbox" name="health" value="vegan" />
-        <label class="form-check-label" for="balanced">Vegan</label>
-      </div>
+      <button type="submit">Search</button>
     </div>
-
-    <div class="form-group">
-      <label for="callories">
-        <h3>Callories</h3>
-      </label>
-      <input class="form-control" type="number" name="cal_min" placeholder="min">
-      <input class="form-control" type="number" name="cal_max" placeholder="max">
-    </div>
-
-    <div class="form-group">
-      <label for="time">
-        <h3>Time of preparation</h3>
-      </label>
-      <input class="form-control" type="number" name="t_min" placeholder="min">
-      <input class="form-control" type="number" name="t_max" placeholder="max">
-    </div>
-    <button type="submit">Search</button>
   </div>
 </form>
+<div class="container-fluid d-flex flex-row justify-content-center flex-wrap">
+  {{#each recs}}
+  <div class="recipe mr-3">
+    <img src="{{this.recipe.image}}" alt="{{this.recipe.label}}">
+    <h2>{{dotdotdot this.recipe.label}}</h2>
+    <p>{{round this.recipe.calories}}</p>
+    {{#each this.recipe.dietLabels}}
+    <p>{{this}}</p>
+    {{/each}}
+  </div>
+  {{/each}}
+</div>
