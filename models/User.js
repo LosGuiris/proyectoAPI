@@ -8,6 +8,9 @@ const userSchema = new Schema({
   allergies: {type:String,default:'Null'},
   diet: {type:String,default:'Null'},
   age: Number,
+  height: Number,
+  weight: Number,
+  bmi: Number
 }, {
   timestamps: {
     createdAt: 'created_at',

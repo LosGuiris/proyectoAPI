@@ -19,10 +19,21 @@ button{
   color: white;
   border: none;
   background-color: $light-green;
-<<<<<<< HEAD
-=======
 }
-form {
-  width: 30%;
->>>>>>> 85a275b475a829311efc6836f1ab905c1d6719fe
+//form {
+ // width: 30%;
+//}
+
+.username {
+  font-family: 'Rochester';
+  font-size: 45px;
+}
+
+.carousel-text {
+  font-family: 'Rochester';
+  font-size: 32px;
+}
+
+::-webkit-input-placeholder {
+  text-align: right;
 }

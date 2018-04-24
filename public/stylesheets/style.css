@@ -22,10 +22,15 @@ button {
   border: none;
   background-color: #13CE66; }
 
-<<<<<<< HEAD
-=======
-form {
-  width: 30%; }
+.username {
+  font-family: 'Rochester';
+  font-size: 45px; }
 
->>>>>>> 85a275b475a829311efc6836f1ab905c1d6719fe
+.carousel-text {
+  font-family: 'Rochester';
+  font-size: 32px; }
+
+::-webkit-input-placeholder {
+  text-align: right; }
+
 /*# sourceMappingURL=style.css.map */
