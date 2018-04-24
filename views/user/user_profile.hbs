@@ -1,0 +1,44 @@
+<h2>User profile</h2>
+
+{{#with user}}
+<h1>{{this.username}}</h1>
+{{/with}}
+
+
+<select name="gender" method="post">
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+
+<br></br>
+
+<select name="allergies" method="post">
+  <option value="Peanut-free">Peanut-free</option>
+  <option value="Tree-nut-free">Tree-nut-free</option>
+  <option value="sugar-conscious">sugar-conscious</option>
+  <option value="alcohol-free">alcohol-free</option>
+  <option value="vegan">vegan</option>
+  <option value="vegetarian">vegeterian</option>
+</select>
+
+<br></br>
+
+<select name="diet" method="post">
+  <option value="balanced">Balanced</option>
+  <option value="high-Protein">High Protein</option>
+  <option value="low-fat">low fat</option>
+  <option value="low-carb">low carb</option>
+  <option value="low-sodium">low sodium</option>
+  
+</select>
+
+<br></br>
+
+<p>
+  Go to Profile
+  <a href="/user/user">
+    Profile
+  </a>
+</p>
+
+
