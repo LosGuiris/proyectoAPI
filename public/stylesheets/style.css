@@ -34,13 +34,6 @@ body {
 a {
   color: #00B7FF; }
 
-navbar {
-  height: 80px;
-  background-color: #125f35; }
-  navbar navbar-brand img {
-    padding: 10px 0;
-    height: 80px; }
-
 .main {
   margin-top: 40px; }
 
@@ -143,5 +136,13 @@ footer {
 
 .navbar-brand > img {
   height: 60px; }
+
+.modal-backdrop {
+  z-index: 0; }
+
+.btn {
+  background-color: #13CE66 !important;
+  border: none;
+  border-radius: 0; }
 
 /*# sourceMappingURL=style.css.map */
