@@ -53,16 +53,6 @@ button {
   border: none;
   background-color: #13CE66; }
 
-.username {
-  font-family: 'Rochester';
-  font-size: 45px; }
-
-.carousel-text {
-  font-family: 'Rochester';
-  font-size: 32px; }
-
-::-webkit-input-placeholder {
-  text-align: right; }
 .recipe {
   border: 1px solid #a0afbe;
   background-color: white;
@@ -104,8 +94,29 @@ button {
     -moz-box-shadow: 0 0 10px #333333;
     box-shadow: 0 0 10px #333333;
     transform: scale(1.15, 1.15); }
+
+button {
+  display: block;
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: white;
+  border: none;
+  background-color: #13CE66; }
+
+.username {
+  font-family: 'Rochester';
+  font-size: 45px; }
+
+.carousel-text {
+  font-family: 'Rochester';
+  font-size: 32px; }
+
+::-webkit-input-placeholder {
+  text-align: right; }
+
 nav {
-  background-color: #0c5a2f;
+  background-color: #125f35;
   height: 80px; }
   nav a {
     color: white;
@@ -121,19 +132,16 @@ nav {
     background: #13CE66;
     font-weight: 700; }
     nav .login:hover {
-      background: #339933; }
+      background: #0c2d41; }
 
 .main {
   margin-top: 40px; }
 
 footer {
   height: 80px;
-  background-color: #515352; }
+  background-color: #333333; }
 
 .navbar-brand > img {
   height: 60px; }
-
-.recipe a {
-  overflow: auto; }
 
 /*# sourceMappingURL=style.css.map */

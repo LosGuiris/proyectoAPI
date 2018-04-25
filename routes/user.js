@@ -40,8 +40,8 @@ router.get("/user_profile/:id", (req, res, next) => {
 
 router.post("/user_profile", (req, res, next) => {
   const user = req.body.id;
-  const { gender, allergies, diet, age, height, weight, bmi } = req.body;
-  const updates = { gender, allergies, diet, age, height, weight, bmi };
+  const { gender, allergies, diet, age, height, weight } = req.body;
+  const updates = { gender, allergies, diet, age, height, weight };
   User.findByIdAndUpdate(user, updates).then(user => {
     user.gender = req.body.gender;
     user.allergies = req.body.allergies;
