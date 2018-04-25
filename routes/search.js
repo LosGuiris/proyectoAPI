@@ -13,18 +13,23 @@ router.get("/", (req, res, next) => {
 
 /* POST query */
 router.post("/", (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   // Adding q parameter
-  if (req.body.name != undefined) {
+  if (req.body.name != "") {
     let name = req.body.name;
-    if (name != "") {
-      api += `&q=${name}`;
-    }
+    // console.log(`name: ${name}`)
+    api += `&q=${name}`;
   }
   //  Adding all diet parameters
-  api += multiParams("diet", req.body.diet);
+  if (typeof req.body.diet !== undefined) {
+    // console.log(req.body.diet)
+    api += multiParams("diet", req.body.diet);
+  }
   //  Adding all health parameters
-  api += multiParams("health", req.body.health);
+  if (typeof req.body.health !== undefined) {
+    // console.log(req.body.health)
+    api += multiParams("health", req.body.health);
+  }
   //  Adding calories MIN/MAX parameters
   api += minmaxParams("&calories=", req.body.cal_min, req.body.cal_max);
   // Adding preparation time MIN/MAX parameters
@@ -42,6 +47,7 @@ router.get("/results", (req, res, next) => {
       // Pushing all results
       let recs = recipe.data.hits;
       console.log(recs)
+      // console.log(recs)
       api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
       res.render("search/index", { recs });
     })
@@ -62,6 +68,7 @@ const multiParams = (p_name, p) => {
       }
       return acc;
     }
+    return acc;
   }
 };
 //  Refactored function for both parameters IF chains

@@ -16,22 +16,30 @@
     crossorigin="anonymous"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
-  <script src='/javascripts/script.js'></script>
-  <script src='/javascripts/chuminadas.js'></script>
+  <script src='/javascripts/script.js'></script> {{!--
+  <script src='/javascripts/chuminadas.js'></script> --}}
 </head>
 
 <body>
-  <navbar class="fixed-top container-fluid">
-    <navbar-brand><img src="/images/logo.png" alt=""></navbar-brand>
+  <nav class="navbar fixed-top">
+    <a class="navbar-brand" href="/search"><img src="/images/logo.png" alt="Logo"></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/search">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
     {{#if user}}
-      {{user.username}}
+    <a href="/user/user">{{user.username}}</a>
+    {{else}}
+    <a href="auth/login" class="login">Log in</a>
     {{/if}}
-
-  </navbar>
-  <div class="container main">
+  </nav>
+  <div class="container-fluid main">
     {{{body}}}
   </div>
-
+  <footer class="fixed-bottom"></footer>
 </body>
 
 </html>

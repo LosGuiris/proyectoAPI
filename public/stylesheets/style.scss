@@ -80,3 +80,47 @@ button {
     transform:scale(1.15,1.15);
   }
 }
+button{
+  display:block;
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: white;
+  border: none;
+  background-color: $light-green;
+}
+nav{
+  background-color: $dark-green;
+  height:80px;
+  a{
+    color:white;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    &:link,&:visited{
+      color:white;
+    }
+    &:hover{
+      color:$light-green !important;
+    }
+  }
+  .login{
+    padding:20px;
+    text-decoration: none;
+    background: $light-green;
+    font-weight: 700;
+    &:hover{
+      background: $mid-green;
+    }
+
+  }
+}
+.main {
+  margin-top: 40px;
+}
+footer{
+  height: 80px;
+  background-color: $dark-grey;
+}
+.navbar-brand > img{
+  height: 60px;
+}
