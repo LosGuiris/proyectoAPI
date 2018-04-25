@@ -3,6 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const app_id = process.env.APP_ID;
 const app_key = process.env.APP_KEY;
+const Recipe = require("../models/Recipe")
 // Query URL where we will add all variable parameters
 let api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
 
@@ -47,26 +48,30 @@ router.get("/results", (req, res, next) => {
       // Pushing all results
       let recs = recipe.data.hits;
       console.log(recs);
-      recs.array.forEach(rec => {
-        const receta = new Recipe({
-          label: rec.recipe.label,
-          image: rec.recipe.image,
-          source: rec.recipe.source,
-          url: rec.recipe.url,
-          dietLabels: rec.recipe.dietLabels,
-          healthLabels: rec.recipe.healthLabels,
-          ingredientLines: rec.recipe.ingredientLines,
-          ingredients: rec.recipe.ingredients,
-          calories: rec.recipe.calories,
-          totalTime: rec.recipe.totalTime
-        });
-      });
+      recs.forEach(r => {
+        const rec = new Recipe({
+          label: r.recipe.label,
+          image: r.recipe.image,
+          source: r.recipe.source,
+          url: r.recipe.url,
+          dietLabels: r.recipe.dietLabels,
+          healthLabels: r.recipe.healthLabels,
+          ingredientLines: r.recipe.ingredientLines,
+          ingredients: r.recipe.ingredients,
+          calories: r.recipe.calories,
+          totalTime: r.recipe.totalTime
+        }).save().then( rec => {
+          })
+          .catch(e => next(e))
+        })
+
       // console.log(recs)
       api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
       res.render("search/index", { recs });
     })
     .catch(error => console.log(error));
 });
+
 //  Refactored function for both multiple choice parameters
 const multiParams = (p_name, p) => {
   let acc = "";

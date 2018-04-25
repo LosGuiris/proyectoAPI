@@ -114,8 +114,11 @@ app.use('/auth', authRoutes);
 const userRoutes = require('./routes/user');
 app.use('/user', userRoutes);
       
-const search = require('./routes/search');
-app.use('/search', search);
+const searchRoutes = require('./routes/search');
+app.use('/search', searchRoutes);
+
+const recipeRoutes = require('./routes/recipe');
+app.use('/recipe', recipeRoutes);
 
 
 

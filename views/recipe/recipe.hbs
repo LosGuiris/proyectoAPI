@@ -1,0 +1,27 @@
+<div id="pageLead" class="container-fluid" style="background-image:url('{{recipe.image}}')">
+  <h1>{{recipe.label}}</h1>
+  <p class="cal">{{round recipe.calories}} cal.</p>
+  <div class="diet">
+        {{#each this.recipe.dietLabels}}
+        <img src="/images/{{this}}.svg"></img>
+        {{/each}}
+      </div>
+</div>
+<a class="goBack" href="/search"><img src="../images/arrow-green.png" alt="goBack"></a>
+<article class="p-5">
+<ul>{{#each recipe.healthLabels}}
+  <img class="allergies" src="/images/{{this}}.png" alt="{{this}}"></img>
+  {{/each}}
+</ul>
+<p><strong>Preparation time: </strong>{{recipe.totalTime}} min</p>
+<h3>Ingredients</h3>
+<ul>
+{{#each recipe.ingredients}}
+<li>{{this.text}}</li>
+{{/each}}
+</ul>
+<h3>Preparation</h3>
+<a href="{this}">See the recipe's source</a>
+<p>Author: {{recipe.source}}</p>
+<a href="/save">Add to favorites</a>
+</article>
