@@ -10,7 +10,6 @@ const userSchema = new Schema({
   age: Number,
   height: Number,
   weight: Number,
-  bmi: Number
 }, {
   timestamps: {
     createdAt: 'created_at',

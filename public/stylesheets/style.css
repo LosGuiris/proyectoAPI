@@ -139,7 +139,11 @@ nav {
 
 footer {
   height: 80px;
+<<<<<<< HEAD
   background-color: #10552a; }
+=======
+  background-color: #333333; }
+>>>>>>> 26ce12caae87c189abca2de7523adc1727379fc1
 
 .navbar-brand > img {
   height: 60px; }
