@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
@@ -13,15 +16,30 @@
     crossorigin="anonymous"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link href="https://fonts.googleapis.com/css?family=Rochester" rel="stylesheet">
-  <script src='/javascripts/script.js'></script>
-  <script src='/javascripts/chuminadas.js'></script>
+  <script src='/javascripts/script.js'></script> {{!--
+  <script src='/javascripts/chuminadas.js'></script> --}}
 </head>
 
 <body>
-
-  {{{body}}}
-
-
+  <nav class="navbar fixed-top">
+    <a class="navbar-brand" href="/search"><img src="/images/logo.png" alt="Logo"></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/search">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+    {{#if user}}
+    <a href="/user/user">{{user.username}}</a>
+    {{else}}
+    <a href="auth/login" class="login">Log in</a>
+    {{/if}}
+  </nav>
+  <div class="container-fluid main">
+    {{{body}}}
+  </div>
+  <footer class="fixed-bottom"></footer>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 //Search menu sliders
-$(() => {
+$( () => {
   $( "#slider-range" ).slider({
     range: true,
     min: 0,

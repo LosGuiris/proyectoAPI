@@ -1,16 +1,85 @@
-
 @import 'colors';
 @import 'fonts';
+@import 'mixins';
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: $light-grey;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+navbar{
+  height: 80px;
+  background-color: $dark-green;
+  navbar-brand {
+    img{
+      padding:10px 0;
+      height: 80px
+    }
+  }
+}
+.main{
+  margin-top: 40px;
+}
+button {
+    display: block;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: white;
+    border: none;
+    background-color: $light-green;
 }
 
+.recipe {
+  border: 1px solid $silvery-grey;
+  background-color:white;
+  @include box-shadow(0,0, 3px, $dark-grey);
+  text-decoration: none;
+  color:$dark-grey;
+    &:hover, &:active, &:link{
+      text-decoration: none;
+    }
+    div {
+        position: relative;
+        .cals {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: inline-block;
+            background-color: white;
+            border-radius: 0 0 0 25px;
+            padding: 0 15px;
+            color: $dark-green;
+        }
+        .diet{
+          position: absolute;
+          left:0;
+          bottom: 0;
+          padding: 0 15px;
+          background-color: white;
+          border-radius: 0 25px 0 0;
+          margin-left: 5px;
+          img{
+            margin: 10px 5px;
+            width:40px;
+          }
+        }
+        img{
+          max-width: 100%;
+        }
+    }
+  &:hover{
+    transition: all 0.5s ease-out;
+    z-index:3;
+    @include box-shadow(0,0,10px, $dark-grey);
+    transform:scale(1.15,1.15);
+  }
+}
 button{
   display:block;
   margin: 20px;
@@ -36,4 +105,38 @@ button{
 
 ::-webkit-input-placeholder {
   text-align: right;
+nav{
+  background-color: $dark-green;
+  height:80px;
+  a{
+    color:white;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+    &:link,&:visited{
+      color:white;
+    }
+    &:hover{
+      color:$light-green !important;
+    }
+  }
+  .login{
+    padding:20px;
+    text-decoration: none;
+    background: $light-green;
+    font-weight: 700;
+    &:hover{
+      background: $mid-green;
+    }
+
+  }
+}
+.main {
+  margin-top: 40px;
+}
+footer{
+  height: 80px;
+  background-color: $dark-grey;
+}
+.navbar-brand > img{
+  height: 60px;
 }

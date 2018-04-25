@@ -46,19 +46,19 @@
       <div class="form-group">
         <h3>Diets</h3>
         <div class="form-check-inline">
-          <input class="form-check-input" type="checkbox" name="diet" value="balanced" id="balanced" />
+          <input class="form-check-input checkbox" type="checkbox" name="diet" value="balanced" id="balanced" />
           <label class="form-check-label" for="balanced">Balanced</label>
         </div>
         <div class="form-check-inline">
-          <input class="form-check-input" type="checkbox" name="diet" value="low-carb" id="low-carb">
+          <input class="form-check-input checkbox" type="checkbox" name="diet" value="low-carb" id="low-carb">
           <label class="form-check-label" for="low-carb">Low carbs</label>
         </div>
         <div class="form-check-inline">
-          <input class="form-check-input" type="checkbox" name="diet" value="low-fat" />
+          <input class="form-check-input checkbox" type="checkbox" name="diet" value="low-fat" />
           <label class="form-check-label" for="balanced">Low fat</label>
         </div>
         <div class="form-check-inline">
-          <input class="form-check-input" type="checkbox" name="diet" value="high-protein" />
+          <input class="form-check-input checkbox" type="checkbox" name="diet" value="high-protein" />
           <label class="form-check-label" for="balanced">High protein</label>
         </div>
       </div>
@@ -75,13 +75,17 @@
 </form>
 <div class="container-fluid d-flex flex-row justify-content-center flex-wrap">
   {{#each recs}}
-  <div class="recipe mr-3">
-    <img src="{{this.recipe.image}}" alt="{{this.recipe.label}}">
+  <a href="/search/results:{{this.recipe.uri}}" class="recipe m-2">
+    <div class="container-fluid d-flex">
+      <img class="image-thumbnail" src="{{this.recipe.image}}" alt="{{this.recipe.label}}">
+      <span class="cals">{{round this.recipe.calories}} cal.</span>
+      <div class="diet">
+        {{#each this.recipe.dietLabels}}
+        <img src="/images/{{this}}.svg"></img>
+        {{/each}}
+      </div>
+    </div>
     <h2>{{dotdotdot this.recipe.label}}</h2>
-    <p>{{round this.recipe.calories}}</p>
-    {{#each this.recipe.dietLabels}}
-    <p>{{this}}</p>
-    {{/each}}
-  </div>
+  </a>
   {{/each}}
 </div>
