@@ -2,6 +2,9 @@
 <html>
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
@@ -18,9 +21,16 @@
 </head>
 
 <body>
+  <navbar class="fixed-top container-fluid">
+    <navbar-brand><img src="/images/logo.png" alt=""></navbar-brand>
+    {{#if user}}
+      {{user.username}}
+    {{/if}}
 
-  {{{body}}}
-
+  </navbar>
+  <div class="container main">
+    {{{body}}}
+  </div>
 
 </body>
 

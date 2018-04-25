@@ -84,8 +84,8 @@ hbs.registerHelper('round', (value) => {
   return Math.round(value);
 })
 hbs.registerHelper('dotdotdot', function(str) {
-  if (str.length > 20)
-    return str.substring(0,20) + '...';
+  if (str.length > 25)
+    return str.substring(0,25) + '...';
   return str;
 });
   

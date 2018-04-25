@@ -31,29 +31,32 @@ router.post("/", (req, res, next) => {
   api += minmaxParams("&time=", req.body.t_min, req.body.t_max);
 
   console.log(`Request URL: ${api}`);
-  res.redirect("/search/:results");
+  res.redirect("/search/results");
 });
 
 /* GET search result */
-router.get("/:results", (req, res, next) => {
+router.get("/results", (req, res, next) => {
   axios
     .get(api)
     .then(recipe => {
       // Pushing all results
       let recs = recipe.data.hits;
+      console.log(recs)
+      api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
       res.render("search/index", { recs });
     })
     .catch(error => console.log(error));
 });
 //  Refactored function for both multiple choice parameters
 const multiParams = (p_name, p) => {
+  let acc = ""
   if (p === undefined) {
     return (p = "");
   } else {
     if (typeof p === "string") {
       return `&${p_name}=${p}`;
     } else if (typeof p === "object") {
-      let acc = ""
+      
       for (let i = 0; i < p.length; i++) {
         acc += `&${p_name}=${p[i]}`;
       }
