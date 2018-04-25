@@ -1,8 +1,8 @@
 <form class="container-fluid d-flex flex-row" action="/search" method="post">
-  <div class="d-flex flex-column">
+  <div class="container-fluid d-flex flex-column">
     <div class="form-group container-fluid d-flex flex-row">
-      <h3>Recipe name</h3>
-      <input class="form-control" type="text" name="name">
+      <h3 id="name">Name</h3>
+      <input class="form-control" type="text" name="name" required>
     </div>
     <div class="container-fluid d-flex flex-row">
       <div class="form-group container-fluid d-inline-flex flex-column">
@@ -69,13 +69,13 @@
         <input class="form-control" type="number" name="cal_min" placeholder="min">
         <input class="form-control" type="number" name="cal_max" placeholder="max">
       </div>
-      <button type="submit">Search</button>
+      <button class="button" type="submit">Search</button>
     </div>
   </div>
 </form>
 <div class="container-fluid d-flex flex-row justify-content-center flex-wrap">
   {{#each recs}}
-  <a href="/search/results:{{this.recipe.uri}}" class="recipe m-2">
+  <a href="/recipe/{{this.recipe.label}}" class="recipe m-2">
     <div class="container-fluid d-flex">
       <img class="image-thumbnail" src="{{this.recipe.image}}" alt="{{this.recipe.label}}">
       <span class="cals">{{round this.recipe.calories}} cal.</span>

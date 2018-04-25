@@ -29,15 +29,20 @@ body {
   padding: 50px;
   box-sizing: border-box;
   font-size: 14px;
-  background-color: #ebebe0; }
+  background-image: url("../images/background.jpg");
+  background-size: contain; }
 
 a {
   color: #00B7FF; }
 
 .main {
-  margin-top: 40px; }
+  margin-top: 30px;
+  padding: 20px;
+  width: 970px;
+  background-color: #ebebe0;
+  min-height: calc(100vh - 160px); }
 
-button {
+.button {
   display: block;
   margin: 20px;
   padding: 10px 20px;
@@ -45,6 +50,9 @@ button {
   color: white;
   border: none;
   background-color: #13CE66; }
+
+form #name {
+  margin: 0 20px; }
 
 .recipe {
   border: 1px solid #a0afbe;
@@ -108,27 +116,27 @@ button {
 ::-webkit-input-placeholder {
   text-align: right; }
 
-nav {
+navbar {
   background-color: #125f35;
-  height: 80px; }
-  nav a {
+  height: 80px;
+  -webkit-box-shadow: 0 0 5px #333333;
+  -moz-box-shadow: 0 0 5px #333333;
+  box-shadow: 0 0 5px #333333; }
+  navbar a {
     color: white;
     text-decoration: none;
     transition: all 0.3s ease-out; }
-    nav a:link, nav a:visited {
+    navbar a:link, navbar a:visited {
       color: white; }
-    nav a:hover {
+    navbar a:hover {
       color: #13CE66 !important; }
-  nav .login {
+  navbar .login {
     padding: 20px;
     text-decoration: none;
     background: #13CE66;
     font-weight: 700; }
-    nav .login:hover {
-      background: #0c2d41; }
-
-.main {
-  margin-top: 40px; }
+    navbar .login:hover {
+      background: #0a8648; }
 
 footer {
   height: 80px;
@@ -144,5 +152,62 @@ footer {
   background-color: #13CE66 !important;
   border: none;
   border-radius: 0; }
+body {
+  background-image: none;
+  background-color: #a0afbe; }
+
+.main {
+  -webkit-box-shadow: 0 0 5px black;
+  -moz-box-shadow: 0 0 5px black;
+  box-shadow: 0 0 5px black; }
+
+#pageLead {
+  position: relative;
+  margin: -20px;
+  width: calc(100% + 40px);
+  height: 150px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #pageLead h1 {
+    font-family: "Cookie", cursive;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    font-size: 3rem;
+    text-shadow: 2px 2px #333333; }
+  #pageLead .diet {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 15px;
+    background-color: #ebebe0;
+    border-radius: 25px 0 0 0;
+    margin-left: 5px; }
+    #pageLead .diet img {
+      margin: 10px 5px;
+      width: 40px; }
+
+.goBack {
+  display: block;
+  position: fixed;
+  top: 120px;
+  transform: translate(-70px); }
+  .goBack img {
+    height: 60px;
+    width: 100px; }
+
+.allergies {
+  height: 80px; }
+
+.cal {
+  position: absolute;
+  top: 5%;
+  right: 2.5%;
+  color: white;
+  font-family: "Cookie", cursive;
+  font-size: 2em; }
 
 /*# sourceMappingURL=style.css.map */
