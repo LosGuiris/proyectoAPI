@@ -53,24 +53,14 @@ button {
   border: none;
   background-color: #13CE66; }
 
-.username {
-  font-family: 'Rochester';
-  font-size: 45px; }
-
-.carousel-text {
-  font-family: 'Rochester';
-  font-size: 32px; }
-
-::-webkit-input-placeholder {
-  text-align: right; }
 .recipe {
   border: 1px solid #a0afbe;
   background-color: white;
-  -webkit-box-shadow: 0 0 3px #333333;
-  -moz-box-shadow: 0 0 3px #333333;
-  box-shadow: 0 0 3px #333333;
+  -webkit-box-shadow: 0 0 3px #10552a;
+  -moz-box-shadow: 0 0 3px #10552a;
+  box-shadow: 0 0 3px #10552a;
   text-decoration: none;
-  color: #333333; }
+  color: #10552a; }
   .recipe:hover, .recipe:active, .recipe:link {
     text-decoration: none; }
   .recipe div {
@@ -100,12 +90,33 @@ button {
   .recipe:hover {
     transition: all 0.5s ease-out;
     z-index: 3;
-    -webkit-box-shadow: 0 0 10px #333333;
-    -moz-box-shadow: 0 0 10px #333333;
-    box-shadow: 0 0 10px #333333;
+    -webkit-box-shadow: 0 0 10px #10552a;
+    -moz-box-shadow: 0 0 10px #10552a;
+    box-shadow: 0 0 10px #10552a;
     transform: scale(1.15, 1.15); }
+
+button {
+  display: block;
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: white;
+  border: none;
+  background-color: #13CE66; }
+
+.username {
+  font-family: 'Rochester';
+  font-size: 45px; }
+
+.carousel-text {
+  font-family: 'Rochester';
+  font-size: 32px; }
+
+::-webkit-input-placeholder {
+  text-align: right; }
+
 nav {
-  background-color: #0c5a2f;
+  background-color: #125f35;
   height: 80px; }
   nav a {
     color: white;
@@ -121,19 +132,16 @@ nav {
     background: #13CE66;
     font-weight: 700; }
     nav .login:hover {
-      background: #339933; }
+      background: #0c2d41; }
 
 .main {
   margin-top: 40px; }
 
 footer {
   height: 80px;
-  background-color: #515352; }
+  background-color: #10552a; }
 
 .navbar-brand > img {
   height: 60px; }
-
-.recipe a {
-  overflow: auto; }
 
 /*# sourceMappingURL=style.css.map */

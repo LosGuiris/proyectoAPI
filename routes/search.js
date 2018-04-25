@@ -46,7 +46,21 @@ router.get("/results", (req, res, next) => {
     .then(recipe => {
       // Pushing all results
       let recs = recipe.data.hits;
-      console.log(recs)
+      console.log(recs);
+      recs.array.forEach(rec => {
+        const receta = new Recipe({
+          label: rec.recipe.label,
+          image: rec.recipe.image,
+          source: rec.recipe.source,
+          url: rec.recipe.url,
+          dietLabels: rec.recipe.dietLabels,
+          healthLabels: rec.recipe.healthLabels,
+          ingredientLines: rec.recipe.ingredientLines,
+          ingredients: rec.recipe.ingredients,
+          calories: rec.recipe.calories,
+          totalTime: rec.recipe.totalTime
+        });
+      });
       // console.log(recs)
       api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
       res.render("search/index", { recs });
@@ -55,14 +69,13 @@ router.get("/results", (req, res, next) => {
 });
 //  Refactored function for both multiple choice parameters
 const multiParams = (p_name, p) => {
-  let acc = ""
+  let acc = "";
   if (p === undefined) {
     return (p = "");
   } else {
     if (typeof p === "string") {
       return `&${p_name}=${p}`;
     } else if (typeof p === "object") {
-      
       for (let i = 0; i < p.length; i++) {
         acc += `&${p_name}=${p[i]}`;
       }
