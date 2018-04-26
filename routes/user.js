@@ -75,7 +75,6 @@ router.get("/plan/:id", (req, res, next) => {
   const data = getBmr(weight,height,age,gender);*/
 
   User.findById(userId)
-<<<<<<< HEAD
   .populate('recipes')  
   .then(user => {
       console.log
@@ -87,11 +86,6 @@ router.get("/plan/:id", (req, res, next) => {
       })
       
     
-=======
-    .then((user) => {
-      res.render("user/plan", { user });
-    })
->>>>>>> 54efe12282d00babe135571b5c1d73eb5206ea45
     .catch(err => console.log(err));
 });
 
