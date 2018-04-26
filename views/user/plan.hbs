@@ -1,6 +1,6 @@
 <h1 class="username">{{user.username}}</h1>
 {{#with user}}
-<p class="bmr">BMR: {{bmr this.weight this.height this.age this.gender}}</p>
+<p class="bmr">Estimated calories needed per day (BMR): {{bmr this.weight this.height this.age this.gender}}</p>
 {{/with}}
 <h2>Prepare your plan</h2>
 {{!-- {{#each recipes}} {{this._id}} {{/each}} --}} {{#each user.recipes}}
@@ -22,12 +22,6 @@
 </div>
 <form action="/user/user_profile" method='post'>
 </form>
-<<<<<<< HEAD
-{{#with user}}
-  
-  <h2 class="bmr">Estimated calories needed per day (BMR): {{bmr this.weight this.height this.age this.gender}}</h2>
-=======
->>>>>>> b5e272e90e09bf5445eca6d8c49216b97fbe7dc9
 
 <form action="/user/user_profile" method='post'>
 </form>
