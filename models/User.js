@@ -4,12 +4,13 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-  gender: {type:String,default:'Null'},
+  gender: String,
   allergies: {type:String,default:'Null'},
   diet: {type:String,default:'Null'},
   age: Number,
   height: Number,
   weight: Number,
+  bmr: Number,
   recipes:Array
 }, {
   timestamps: {

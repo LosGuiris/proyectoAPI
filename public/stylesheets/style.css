@@ -145,6 +145,9 @@ footer {
 .navbar-brand > img {
   height: 60px; }
 
+.navbar-brand > img {
+  height: 60px; }
+
 .modal-backdrop {
   z-index: 0; }
 
@@ -152,6 +155,10 @@ footer {
   background-color: #13CE66 !important;
   border: none;
   border-radius: 0; }
+
+.username-nav {
+  text-decoration: none; }
+
 body {
   background-image: none;
   background-color: #a0afbe; }
@@ -209,5 +216,26 @@ body {
   color: white;
   font-family: "Cookie", cursive;
   font-size: 2em; }
+
+.modal-body {
+  background-color: #caec84; }
+
+.modal-header {
+  background-color: #def8aa; }
+
+.modal-dialog {
+  position: absolute;
+  top: 170px;
+  right: 100px;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto; }
+
+.btn-submit {
+  border-radius: 0;
+  margin-left: 0;
+  padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */

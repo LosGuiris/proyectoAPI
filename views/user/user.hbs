@@ -5,10 +5,10 @@
   <h1 class="username">{{this.username}}</h1>
   <h4>Gender: {{this.gender}}</h4>
   <h4>Age: {{this.age}}</h4>
-  {{/with}}
-  <a class="btn btn-primary" href="/user/user_profile/{{user._id}}">Edit profile</a>
+ 
+  <a class="btn btn-primary" href="/user/user_profile/{{this._id}}">Edit profile</a>
   <br></br>
-  <a class="btn btn-primary" href="/user/plan/{{user._id}}">Prepare plan</a>
+  <a class="btn btn-primary" href="/user/plan/{{this._id}}">Prepare plan</a>
 </div>
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -33,7 +33,8 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
+{{bmr this.weight this.height this.age this.gender}}
+ {{/with}}
 
 <br></br>
 <a class="btn btn-primary" href="/search">choose recipes</a>
