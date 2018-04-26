@@ -43,8 +43,7 @@ authRoutes.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username,
-      password: hashPass,
-      role:"teacher"
+      password: hashPass
     });
 
     newUser.save((err, us) => {
@@ -53,6 +52,7 @@ authRoutes.post("/signup", (req, res, next) => {
       } else {
         req.session.currentUser = newUser;
         res.redirect(`/user/user_profile/${newUser._id}`);
+        
       }
     });
   });

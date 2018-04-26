@@ -167,5 +167,35 @@ footer {
   border-radius: 0;
 }
 
+.username-nav {
+  text-decoration: none;
+}
+
 //  Specific pages:
 @import 'recipe';
+
+
+.modal-body {
+  background-color: rgb(202, 236, 132);
+}
+
+.modal-header {
+  background-color: rgb(222, 248, 170);
+}
+
+.modal-dialog {
+  position: absolute;
+  top: 170px;
+  right: 100px;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.btn-submit {
+  border-radius: 0;
+  margin-left:0;
+  padding: 10px;
+}
