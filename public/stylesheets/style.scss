@@ -9,6 +9,7 @@ body {
     font-size: 14px;
     background-image:url('../images/background.jpg');
     background-size:contain;
+    color: $font-grey;
 }
 
 a {
@@ -132,6 +133,9 @@ navbar {
             color: $light-green !important;
         }
     }
+    .username{
+        text-shadow: 2px 2px $dark-grey;
+    }
     .login {
         padding: 20px;
         text-decoration: none;
@@ -148,6 +152,35 @@ navbar {
 footer {
     height: 80px;
     background-color: $dark-grey;
+    color: $footer-grey;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    justify-content: flex-start;
+    a, a:link, a:visited, a:active{
+        color:$footer-grey;
+        text-decoration: none;
+        &:hover{
+            color:$light-green;
+        }
+        transition: all 0.3s ease-out
+    }
+    .badges{
+        p{
+            padding:10px;
+            margin: 0;
+        }
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-self: flex-start;
+    }
+    .links{
+        margin:auto;
+        *{
+            margin: 20px;
+            font-size: 1.5em;
+        }        
+    }
 }
 
 .navbar-brand>img {
