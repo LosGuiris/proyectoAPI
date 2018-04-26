@@ -13,9 +13,11 @@ const session    = require("express-session");
 const MongoStore = require('connect-mongo')(session);
 const flash      = require("connect-flash");    
 
+const DBURL = process.env.MONGODB_URL
+
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/nutriproject', {useMongoClient: true})
+  .connect(DBURL, {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -45,16 +47,14 @@ app.use(
   })
 );
 app.use((req, res, next) => {
-  if (req.session.currentUser) {
-    res.locals.currentUserInfo = req.session.currentUser;
-   
-    res.locals.isUserLoggedIn = true;
+  if (req.user) {
+    app.locals.user = req.user;
   } else {
-    res.locals.isUserLoggedIn = false;
+    app.locals.user = null;
   }
-
   next();
 });
+
 
 // Express View engine setup
 
@@ -88,6 +88,11 @@ hbs.registerHelper('dotdotdot', function(str) {
     return str.substring(0,25) + '...';
   return str;
 });
+hbs.registerHelper('ifEqual', function(value1, value2){
+  if (value1 === value2){
+    return value1
+  }
+})
   
 
 // default value for title local
@@ -103,7 +108,11 @@ app.use(session({
 }))
 app.use(flash());
 require('./passport')(app);
-    
+
+app.use((req,res,next) =>{
+  res.locals.user = req.user;
+  next();
+})    
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -113,7 +122,7 @@ app.use('/auth', authRoutes);
 
 const userRoutes = require('./routes/user');
 app.use('/user', userRoutes);
-      
+
 const searchRoutes = require('./routes/search');
 app.use('/search', searchRoutes);
 

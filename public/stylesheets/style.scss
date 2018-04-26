@@ -1,7 +1,7 @@
 @import 'colors';
 @import 'fonts';
 @import 'mixins';
-
+@import 'auth';
 
 body {
     padding: 50px;
@@ -120,10 +120,12 @@ navbar {
     @include box-shadow(0, 0, 5px, $dark-grey);
     a {
         color: white;
-        text-decoration: none;
+
+        margin: 15px;
         transition: all 0.3s ease-out;
         &:link,
         &:visited {
+            text-decoration: none;
             color: white;
         }
         &:hover {

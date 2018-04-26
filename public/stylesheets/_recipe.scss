@@ -1,6 +1,6 @@
 body{
-  background-image: none;
-  background-color: $silvery-grey;
+  //background-image: none;
+  //background-color: $silvery-grey;
 }
 
 .main{
@@ -48,6 +48,9 @@ body{
     height:60px;
     width: 100px;
   }
+}
+.bookmark{
+  display:block;
 }
 .allergies{
   height: 80px;

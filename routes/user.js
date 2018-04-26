@@ -5,6 +5,7 @@ const Plan = require("../models/Plan");
 const axios = require("axios");
 const app_id = process.env.APP_ID;
 const app_key = process.env.APP_KEY;
+const Recipe = require("../models/Recipe")
 // Query URL where we will add all variable parameters
 let api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
 
@@ -57,9 +58,17 @@ router.post("/user_profile", (req, res, next) => {
 router.get("/plan/:id", (req, res, next) => {
   const userId = req.session.passport.user;
   User.findById(userId)
-    .then(user => {
-      res.render("user/plan", { user });
-    })
+  .populate('recipes')  
+  .then(user => {
+      console.log
+      // Recipe.find().then((recipes)=> {
+      //   let filteredRecipes = recipes.filter((recipe) => {
+      //     return user.recipes.indexOf(recipe._id) !=-1
+      //   })
+        res.render("user/plan", { user });
+      })
+      
+    
     .catch(err => console.log(err));
 });
 

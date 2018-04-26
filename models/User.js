@@ -10,7 +10,7 @@ const userSchema = new Schema({
   age: Number,
   height: Number,
   weight: Number,
-  recipes:Array
+  recipes:[{type: Schema.Types.ObjectId, ref:"Recipe"}]
 }, {
   timestamps: {
     createdAt: 'created_at',

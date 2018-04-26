@@ -1,11 +1,22 @@
 <h2>Prepare your plan</h2>
 
-{{#with user}}
-  <h1 class="username">{{this.username}}</h1>
-  {{/with}}
 
-  <form action="/user/user_profile" method='post'>
-  
-  
-  
-  </form>
+
+
+{{!-- {{#each recipes}} {{this._id}} {{/each}} --}}
+<h1 class="username">{{user.username}}</h1>
+<ul>
+  {{#each user.recipes}}
+  <li>{{this}}</li> {{/each}}
+</ul>
+
+
+
+
+
+
+<form action="/user/user_profile" method='post'>
+
+
+
+</form>

@@ -1,0 +1,22 @@
+#form-container{
+  position:relative;
+  margin:auto;
+  width: 20vw;
+}
+.error-message{
+  background-color: $light-red;
+  color: $red;
+  padding: 5px 10px;
+}
+.modal-header{
+  display:flex;
+  justify-content: center;
+  font-family: $cookie;
+  .modal-title{
+    margin-left:45%;
+    font-size: 2em;
+  }
+  button{
+    justify-self: flex-end;
+  }
+}

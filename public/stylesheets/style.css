@@ -25,6 +25,26 @@ h3 {
   font-weight: 700;
   font-family: "Cookie", cursive; }
 
+#form-container {
+  position: relative;
+  margin: auto;
+  width: 20vw; }
+
+.error-message {
+  background-color: #ffc4c4;
+  color: #ea4f4f;
+  padding: 5px 10px; }
+
+.modal-header {
+  display: flex;
+  justify-content: center;
+  font-family: "Cookie", cursive; }
+  .modal-header .modal-title {
+    margin-left: 45%;
+    font-size: 2em; }
+  .modal-header button {
+    justify-self: flex-end; }
+
 body {
   padding: 50px;
   box-sizing: border-box;
@@ -124,9 +144,10 @@ navbar {
   box-shadow: 0 0 5px #333333; }
   navbar a {
     color: white;
-    text-decoration: none;
+    margin: 15px;
     transition: all 0.3s ease-out; }
     navbar a:link, navbar a:visited {
+      text-decoration: none;
       color: white; }
     navbar a:hover {
       color: #13CE66 !important; }
@@ -145,6 +166,9 @@ footer {
 .navbar-brand > img {
   height: 60px; }
 
+.navbar-brand > img {
+  height: 60px; }
+
 .modal-backdrop {
   z-index: 0; }
 
@@ -152,9 +176,6 @@ footer {
   background-color: #13CE66 !important;
   border: none;
   border-radius: 0; }
-body {
-  background-image: none;
-  background-color: #a0afbe; }
 
 .main {
   -webkit-box-shadow: 0 0 5px black;
@@ -198,6 +219,9 @@ body {
   .goBack img {
     height: 60px;
     width: 100px; }
+
+.bookmark {
+  display: block; }
 
 .allergies {
   height: 80px; }

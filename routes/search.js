@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const app_id = process.env.APP_ID;
 const app_key = process.env.APP_KEY;
-const Recipe = require("../models/Recipe")
+const Recipe = require("../models/Recipe");
 // Query URL where we will add all variable parameters
 let api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
 
@@ -42,34 +42,33 @@ router.post("/", (req, res, next) => {
 
 /* GET search result */
 router.get("/results", (req, res, next) => {
-  axios
-    .get(api)
-    .then(recipe => {
-      // Pushing all results
-      let recs = recipe.data.hits;
-      console.log(recs);
-      recs.forEach(r => {
-        const rec = new Recipe({
-          label: r.recipe.label,
-          image: r.recipe.image,
-          source: r.recipe.source,
-          url: r.recipe.url,
-          dietLabels: r.recipe.dietLabels,
-          healthLabels: r.recipe.healthLabels,
-          ingredientLines: r.recipe.ingredientLines,
-          ingredients: r.recipe.ingredients,
-          calories: r.recipe.calories,
-          totalTime: r.recipe.totalTime
-        }).save().then( rec => {
+    axios
+      .get(api)
+      .then(recipe => {
+        // Pushing all results
+        let recs = recipe.data.hits;
+        console.log(recs);
+        recs.forEach(r => {
+          const rec = new Recipe({
+            label: r.recipe.label,
+            image: r.recipe.image,
+            source: r.recipe.source,
+            url: r.recipe.url,
+            dietLabels: r.recipe.dietLabels,
+            healthLabels: r.recipe.healthLabels,
+            ingredientLines: r.recipe.ingredientLines,
+            ingredients: r.recipe.ingredients,
+            calories: r.recipe.calories,
+            totalTime: r.recipe.totalTime
           })
-          .catch(e => next(e))
-        })
-
-      // console.log(recs)
-      api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
-      res.render("search/index", { recs });
-    })
-    .catch(error => console.log(error));
+            .save()
+            .catch(e => next(e));
+        });
+        // console.log(recs)
+        api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
+        res.render("search/index", { recs });
+      })
+      .catch(error => console.log(error));
 });
 
 //  Refactored function for both multiple choice parameters
