@@ -47,7 +47,7 @@ router.get("/results", (req, res, next) => {
       .then(recipe => {
         // Pushing all results
         let recs = recipe.data.hits;
-        console.log(recs);
+
         recs.forEach(r => {
           const rec = new Recipe({
             label: r.recipe.label,
