@@ -73,10 +73,10 @@
     </div>
   </div>
 </form>
-<div class="container-fluid d-flex flex-row justify-content-center flex-wrap">
+<div class="container-fluid d-flex flex-row justify-content-center flex-wrap no-gutters">
   {{#each recs}}
-  <a href="/recipe/{{this.recipe.label}}?id={{this.recipe.url}}" class="recipe m-2">
-    <div class="container-fluid d-flex">
+  <a href="/recipe/{{this.recipe.label}}?id={{this.recipe.url}}" class="recipe m-2 col-4">
+    <div class="d-flex">
       <img class="image-thumbnail" src="{{this.recipe.image}}" alt="{{this.recipe.label}}">
       <span class="cals">{{round this.recipe.calories}} cal.</span>
       <div class="diet">

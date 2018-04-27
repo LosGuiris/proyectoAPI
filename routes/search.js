@@ -48,7 +48,7 @@ router.get("/results", (req, res, next) => {
         // Pushing all results
         let recs = recipe.data.hits;
 
-        recs.forEach(r => {
+        Promise.all(recs.map(r => {
           const rec = new Recipe({
             label: r.recipe.label,
             image: r.recipe.image,
@@ -62,11 +62,15 @@ router.get("/results", (req, res, next) => {
             totalTime: r.recipe.totalTime
           })
             .save()
-            .catch(e => next(e));
-        });
+        }))
+        //console.log(recs)
+        .then(() => {
+          api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
+          res.render("search/index", { recs });
+
+        })
+        .catch(e => next(e));
         // console.log(recs)
-        api = `https://api.edamam.com/search?app_id=${app_id}&app_key=${app_key}`;
-        res.render("search/index", { recs });
       })
       .catch(error => console.log(error));
 });

@@ -1,29 +1,21 @@
 <div class="container plan-container">
 <h1 class="username">{{user.username}}</h1>
 {{#with user}}
-<p class="bmr">Estimated calories needed per day (BMR): {{bmr this.weight this.height this.age this.gender}}</p>
+<p class="bmr">Estimated calories needed per day (BMR): <strong>{{bmr this.weight this.height this.age this.gender}}</strong></p>
 {{/with}}
 <h2>Prepare your plan</h2>
-{{!-- {{#each recipes}} {{this._id}} {{/each}} --}} {{#each user.recipes}}
-<div class="container-fluid d-flex flex-row justify-content-left flex-wrap">
-<div class="recipe">
-  <a href="/recipe/{{this.label}}?id={{this.url}}" class="recipe m-2">
-    <div class="container-fluid d-flex">
-      <img class="image-thumbnail" src="{{this.image}}" alt="{{this.label}}">
-      <span class="cals">{{round this.calories}} cal.</span>
-      <div class="diet">
-        {{#each this.dietLabels}}
-        <img src="/images/{{this}}.svg"></img>
-        {{/each}}
-      </div>
+{{!-- {{#each recipes}} {{this._id}} {{/each}} --}} 
+{{#with user}}
+{{#each recipes}}
+<div class="container-fluid d-flex">
+
+  <a href="/recipe/{{this.label}}?id={{this.url}}" class="recipe m-2 d-flex justify-content-between">
+    <div class="d-flex flex-column justify-content-center">
+      <span class="plan cals">{{round this.calories}} cal.</span>
     </div>
-    <h2>{{dotdotdot this.label}}</h2>
+    <h2 class="plan-font">{{dotdotdot this.label}}</h2>
   </a>
 </div>{{/each}}
 </div>
 <form action="/user/user_profile" method='post'>
 </form>
-
-<form action="/user/user_profile" method='post'>
-</form>
-</div>
