@@ -14,36 +14,40 @@
         <div id="slider-range"></div>
       </div>
 
-      <div class="form-group container-fluid d-inline-flex flex-column">
+      <div class="form-group container-fluid d-inline-flex flex-column col-4">
         <h3>Health considerations</h3>
         <div class="d-flex flex-row">
-          <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" name="health" value="tree-nut-free" />
-            <label class="form-check-label" for="balanced">Tree Nut Free</label>
+          <div class="d-flex flex-column">
+            <div class="form-check-inline">
+              <input class="form-check-input" type="checkbox" name="health" value="tree-nut-free" />
+              <label class="form-check-label" for="balanced">Tree Nut Free</label>
+            </div>
+            <div class="form-check-inline">
+              <input class="form-check-input" type="checkbox" name="health" value="peanut-free" />
+              <label class="form-check-label" for="balanced">Peanut Free</label>
+            </div>
+            <div class="form-check-inline">
+              <input class="form-check-input" type="checkbox" name="health" value="alcohol-free" />
+              <label class="form-check-label" for="balanced">Alcohol Free</label>
+            </div>
           </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" name="health" value="peanut-free" />
-            <label class="form-check-label" for="balanced">Peanut Free</label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" name="health" value="alcohol-free" />
-            <label class="form-check-label" for="balanced">Alcohol Free</label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" name="health" value="sugar-conscious" id="sugar-conscious" />
-            <label class="form-check-label" for="sugar-conscious">Sugar conscious</label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" name="health" value="vegetarian" />
-            <label class="form-check-label" for="balanced">Vegetarian</label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="checkbox" name="health" value="vegan" />
-            <label class="form-check-label" for="balanced">Vegan</label>
+          <div class="d-flex flex-column">
+            <div class="form-check-inline">
+              <input class="form-check-input" type="checkbox" name="health" value="sugar-conscious" id="sugar-conscious" />
+              <label class="form-check-label" for="sugar-conscious">Sugar conscious</label>
+            </div>
+            <div class="form-check-inline">
+              <input class="form-check-input" type="checkbox" name="health" value="vegetarian" />
+              <label class="form-check-label" for="balanced">Vegetarian</label>
+            </div>
+            <div class="form-check-inline">
+              <input class="form-check-input" type="checkbox" name="health" value="vegan" />
+              <label class="form-check-label" for="balanced">Vegan</label>
+            </div>
           </div>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group col-2">
         <h3>Diets</h3>
         <div class="form-check-inline">
           <input class="form-check-input checkbox" type="checkbox" name="diet" value="balanced" id="balanced" />
@@ -62,7 +66,7 @@
           <label class="form-check-label" for="balanced">High protein</label>
         </div>
       </div>
-      <div class="form-group container-fluid d-inline-flex flex-column">
+      <div class="form-group container-fluid d-inline-flex flex-column col-2">
         <label for="callories">
           <h3>Callories</h3>
         </label>
