@@ -6,13 +6,15 @@ const app_id = process.env.APP_ID;
 const app_key = process.env.APP_KEY;
 const Recipe = require("../models/Recipe")
 
-router.get("/save", (req, res, next) => {
+router.get("/save:id", (req, res, next) => {
   const url = req.query.id;
   console.log(req.user.id)
-  User.findOneAndUpdate({_id:req.user.id}, {$push:{recipes:url}})
-  .then( () => {
-    res.redirect("/search")
+  User.findOneAndUpdate({_id:req.user.id},{recipes:req.query.id})
+  .populate('recipes')
+  .then( (user ) => {
+    res.redirect("recipe", { user })
   })
+  .catch(e => console.log(e))
 })
 router.get("/:label", (req,res, next) => {
   const url = req.query.id;
