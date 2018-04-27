@@ -334,8 +334,8 @@ article {
 
 .modal-dialog {
   position: absolute;
-  top: 210px;
-  right: 25px;
+  top: 170px;
+  right: 100px;
   bottom: 0;
   left: 0;
   z-index: 10040;
@@ -345,47 +345,6 @@ article {
 .btn-submit {
   border-radius: 0;
   margin-left: 0;
-  margin-top: 0;
-  padding: 10px 35px; }
-
-.button-wrapper .btn {
-  margin-bottom: 10px; }
-
-#form-width {
-  width: 140px; }
-
-#form-width-l {
-  width: 90px; }
-
-.form-rounded {
-  border: 1px solid #a5a3a3;
-  border-radius: 7px; }
-
-/*.cont-user {
-    padding-left:80px;
-}*/
-/*.btn-logout-profile {
- margin-left: 30px;
- }
-
- .profile-form {
-   margin-top: 35px;
- }
-
- .user-profile-btn {
-     margin-top: 85px;
- }*/
-.user-profile-name {
-  margin-top: 55px;
-  margin-bottom: 65px; }
-
-/*.plan-container {
-     margin-top: 25px;
- }*/
-.carousel-box {
-  margin-top: 35px; }
-
-.btn-user-search {
-  margin-top: 0; }
+  padding: 10px; }
 
 /*# sourceMappingURL=style.css.map */
