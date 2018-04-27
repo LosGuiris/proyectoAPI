@@ -1,16 +1,34 @@
-<div>
-  <h2>User</h2>
-
-  {{#with user}}
+<div class="container cont-user">
+  <h2>User:</h2>
+ 
+{{#with user}}
   <h1 class="username">{{this.username}}</h1>
+
+<div class="d-flex container-fluid justify-content-around">
+  <div class="d-flex-col">
+  
   <h4>Gender: {{this.gender}}</h4>
   <h4>Age: {{this.age}}</h4>
+  <h4>Diet: {{this.diet}}</h4>
+  </div>
  
-  <a class="btn btn-primary" href="/user/user_profile/{{this._id}}">Edit profile</a>
+ <div class="d-flex-col">
+  <a class="btn btn-primary " href="/user/user_profile/{{this._id}}">Edit profile</a>
   <br></br>
   <a class="btn btn-primary" href="/user/plan/{{this._id}}">Prepare plan</a>
 </div>
 
+
+ <div class="d-flex-col">
+<a class="btn btn-primary btn-user-search" href="/search">choose recipes</a>
+<br></br>
+<a class="btn btn-primary" href="/auth/logout">Log out</a>
+{{/with}}
+
+</div>
+</div>
+
+<div class="carousel-box">
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <p class=" carousel-text text-center">Your favorite recipes</p>
   <div class="carousel-inner">
@@ -32,12 +50,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-<!--{{bmr this.weight this.height this.age this.gender}}-->
- {{/with}}
 
-<br></br>
-<a class="btn btn-primary" href="/search">choose recipes</a>
-<br></br>
-<a class="btn btn-primary" href="/auth/logout">Log out</a>
+ </div>
+</div>
 </div>
