@@ -246,3 +246,69 @@ footer {
 @import 'recipe';
 @import 'modal';
 
+
+.modal-body {
+    background-color: rgb(202, 236, 132);
+  }
+  
+  .modal-header {
+    background-color: rgb(222, 248, 170);
+  }
+  
+  .modal-dialog {
+    position: absolute;
+    top: 210px;
+    right: 25px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+  }
+  
+
+.btn-submit {
+    border-radius: 0;
+    margin-left:0;
+    margin-top:0;
+    padding: 10px 35px;
+  }
+  
+  .button-wrapper .btn {
+      margin-bottom:10px;
+  }
+  
+  #form-width{
+      width: 140px;
+  }
+  
+  #form-width-l {
+      width: 90px;
+  }
+  
+  .form-rounded {
+      border:1px solid rgb(165, 163, 163);
+      border-radius: 7px;
+      }
+
+      .user-profile-name {
+        margin-top: 55px;
+        margin-bottom: 65px;
+    }
+   
+    /*.plan-container {
+        margin-top: 25px;
+    }*/
+   
+    .carousel-box {
+        margin-top:35px;
+    }
+    
+    .btn-user-search {
+        margin-top:0;
+    }  
+
+    .bmr {
+        font-size:25px;
+    }
+  

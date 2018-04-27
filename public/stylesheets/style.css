@@ -334,6 +334,27 @@ article {
 
 .modal-dialog {
   position: absolute;
+  top: 170px;
+  right: 100px;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto; }
+
+.btn-submit {
+  border-radius: 0;
+  margin-left: 0;
+  padding: 10px; }
+
+.modal-body {
+  background-color: #caec84; }
+
+.modal-header {
+  background-color: #def8aa; }
+
+.modal-dialog {
+  position: absolute;
   top: 210px;
   right: 25px;
   bottom: 0;
@@ -361,31 +382,20 @@ article {
   border: 1px solid #a5a3a3;
   border-radius: 7px; }
 
-/*.cont-user {
-    padding-left:80px;
-}*/
-/*.btn-logout-profile {
- margin-left: 30px;
- }
-
- .profile-form {
-   margin-top: 35px;
- }
-
- .user-profile-btn {
-     margin-top: 85px;
- }*/
 .user-profile-name {
   margin-top: 55px;
   margin-bottom: 65px; }
 
 /*.plan-container {
-     margin-top: 25px;
- }*/
+        margin-top: 25px;
+    }*/
 .carousel-box {
   margin-top: 35px; }
 
 .btn-user-search {
   margin-top: 0; }
+
+.bmr {
+  font-size: 25px; }
 
 /*# sourceMappingURL=style.css.map */
