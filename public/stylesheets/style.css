@@ -92,8 +92,11 @@ button, .button {
 .carousel-caption {
   width: 40%;
   margin: auto;
-  background: rgba(18, 95, 53, 0.7);
-  font-family: "Cookie", cursive; }
+  background: rgba(18, 95, 53, 0.7); }
+  .carousel-caption a {
+    font-family: "Cookie", cursive !important;
+    color: white !important;
+    text-decoration: none; }
 
 form #name {
   margin: 0 20px; }
@@ -254,7 +257,7 @@ footer {
 
 .reg-btn {
   margin-top: 45px;
-  padding: 20px 35px;
+  padding: 5px 35px;
   border-radius: 12px;
   font-size: 20px; }
 

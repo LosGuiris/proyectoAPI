@@ -59,7 +59,11 @@ button, .button {
     width: 40%;
     margin: auto;
     background: rgba(18, 95, 53,0.7);
-    font-family: $cookie;
+    a{
+        font-family: $cookie !important;
+        color: white !important;
+        text-decoration: none;
+    }
 }
 form {
     #name {
