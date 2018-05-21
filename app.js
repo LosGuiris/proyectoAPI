@@ -42,7 +42,6 @@ app.use(
     secret: "maluca",
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 60 * 60 * 24 * 2 }, //2 days
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
       ttl: 24 * 60 * 60 * 2 // 2 day
@@ -108,15 +107,6 @@ hbs.registerHelper("ifEqual", function(value1, value2) {
 
 // default value for title local
 app.locals.title = "Nutrition app";
-
-// Enable authentication using session + passport
-
-// app.use(session({
-//   secret: 'irongenerator',
-//   resave: true,
-//   saveUninitialized: true,
-//   store: new MongoStore( { mongooseConnection: mongoose.connection })
-// }))
 
 app.use(flash());
 require("./passport")(app);

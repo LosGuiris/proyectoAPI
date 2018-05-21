@@ -14,7 +14,7 @@
         <div id="slider-range"></div>
       </div>
 
-      <div class="form-group container-fluid d-inline-flex flex-column col-4">
+      <div class="form-group container-fluid d-inline-flex flex-column">
         <h3>Health considerations</h3>
         <div class="d-flex flex-row">
           <div class="d-flex flex-column">
@@ -81,7 +81,7 @@
 </form>
 <div class="container-fluid d-flex flex-row justify-content-center flex-wrap no-gutters">
   {{#each recs}}
-  <a href="/recipe/{{this.recipe.label}}?id={{this.recipe.url}}" class="recipe m-2 col-4">
+  <a href="/recipe/{{this.recipe.label}}?id={{this.recipe.url}}" class="recipe m-2 col-3">
     <div class="d-flex">
       <img class="image-thumbnail" src="{{this.recipe.image}}" alt="{{this.recipe.label}}">
       <span class="cals">{{round this.recipe.calories}} cal.</span>

@@ -1,94 +1,88 @@
-
-<div class="user-profile container">
-
-
-<h2>User profile:</h2>
-<div class="user-profile-name">
-{{#with user}}
-<h1 class="username">{{this.username}}</h1>
-{{/with}}
+<div class="container cont-user">
+  {{#with user}}
+  <h1 class="username">{{this.username}}</h1>
+  {{/with}}
 </div>
-
 
 <div class="d-flex container-fluid justify-content-around">
 
-<div class="d-flex-col">
-<form action="/user/user_profile" method='post'>
-  <input type="hidden" value={{user._id}} name="id">
-
-  <div class="input-group mb-3 justify-content-between">
-    <div class="input-group-prepend" >
-      <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Gender</label>
-    </div>
-    <select name="gender" id="form-width" method="post">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select>
-  </div>
-
-  <div class="input-group mb-3 justify-content-between">
-    <div class="input-group-prepend" >
-      <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Allergies</label>
-    </div>
-    <select name="allergies" id="form-width" method="post">
-      <option selected>None</option>
-      <option value="peanut-free">Peanut-free</option>
-      <option value="tree-nut-free">Tree-nut-free</option>
-      <option value="sugar-conscious">Sugar-conscious</option>
-      <option value="alcohol-free">Alcohol-free</option>
-      <option value="vegan">vegan</option>
-      <option value="vegetarian">Vegeterian</option>
-    </select>
-  </div>
-
- 
-  <div class="input-group mb-3 justify-content-between">
-    <div class="input-group-prepend">
-      <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Diet</label>
-    </div>
-    <select name="diet" id="form-width" method="post">
-      <option selected="selected" value="balanced">Balanced</option>
-      <option value="high-Protein">High Protein</option>
-      <option value="low-fat">Low fat</option>
-      <option value="low-carb">Low carb</option>
-      <option value="low-sodium">Low sodium</option>
-    </select>
-  </div>
-  </div>
-  
   <div class="d-flex-col">
-  <div class="input-group mb-3 justify-content-between">
-    <div class="input-group-prepend">
-      <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Age</label>
-    </div >
-    <input class="form-rounded" id="form-width" type="number" name="age" method="post"></input>
+    <form action="/user/user_profile" method='post'>
+      <input type="hidden" value={{user._id}} name="id">
+
+      <div class="input-group mb-3 justify-content-between">
+        <div class="input-group-prepend">
+          <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Gender</label>
+        </div>
+        <select name="gender" id="form-width" method="post">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="input-group mb-3 justify-content-between">
+        <div class="input-group-prepend">
+          <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Allergies</label>
+        </div>
+        <select name="allergies" id="form-width" method="post">
+          <option selected>None</option>
+          <option value="peanut-free">Peanut-free</option>
+          <option value="tree-nut-free">Tree-nut-free</option>
+          <option value="sugar-conscious">Sugar-conscious</option>
+          <option value="alcohol-free">Alcohol-free</option>
+          <option value="vegan">vegan</option>
+          <option value="vegetarian">Vegeterian</option>
+        </select>
+      </div>
+
+
+      <div class="input-group mb-3 justify-content-between">
+        <div class="input-group-prepend">
+          <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Diet</label>
+        </div>
+        <select name="diet" id="form-width" method="post">
+          <option selected="selected" value="balanced">Balanced</option>
+          <option value="high-Protein">High Protein</option>
+          <option value="low-fat">Low fat</option>
+          <option value="low-carb">Low carb</option>
+          <option value="low-sodium">Low sodium</option>
+        </select>
+      </div>
   </div>
 
-  <div class="input-group mb-3 justify-content-between">
-    <div class="input-group-prepend">
-      <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Height</label>
+  <div class="d-flex-col">
+    <div class="input-group mb-3 justify-content-between">
+      <div class="input-group-prepend">
+        <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Age</label>
+      </div>
+      <input class="form-rounded" id="form-width" type="number" name="age" method="post"></input>
     </div>
-    <input class="form-rounded" id="form-width" type="number" name="height" method="post" placeholder="cm"></input>
-  </div>
 
-  <div class="input-group mb-3 justify-contentbetween">
-    <div class="input-group-prepend">
-      <label id="form-width-l"class="input-group-text" for="inputGroupSelect01">Weight</label>
+    <div class="input-group mb-3 justify-content-between">
+      <div class="input-group-prepend">
+        <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Height</label>
+      </div>
+      <input class="form-rounded" id="form-width" type="number" name="height" method="post" placeholder="cm"></input>
     </div>
-    <input class="form-rounded" id="form-width" type="number" name="weight" method="post" placeholder="kg"></input>
+
+    <div class="input-group mb-3 justify-contentbetween">
+      <div class="input-group-prepend">
+        <label id="form-width-l" class="input-group-text" for="inputGroupSelect01">Weight</label>
+      </div>
+      <input class="form-rounded" id="form-width" type="number" name="weight" method="post" placeholder="kg"></input>
+    </div>
   </div>
+
+
+  <div class="d-flex-col col-3">
+    <button class="btn-submit col-12">SUBMIT</button>
+    <div class="button-wrapper">
+      <a class="btn btn-primary d-block col-12" href="/search">Choose recipes</a>
+      <a class="btn btn-primary d-block col-12" href="/auth/logout">Log out</a>
+      </form>
+    </div>
+
   </div>
-
-
-<div class="d-flex-col">
-  <button class="btn-submit">SUBMIT</button>
-  <div class="button-wrapper">
-<a class="btn btn-primary d-block" href="/search">choose recipes</a>
-<a class="btn btn-primary d-block" href="/auth/logout">Log out</a>
-</form>
-</div>
-
-</div>
 
 
 
